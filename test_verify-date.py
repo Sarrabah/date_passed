@@ -26,3 +26,7 @@ def test_should_return_false_if_the_date_is_not_well_formated() :
     date_verifier= dateVerifier(current_date)
     assert date_verifier.is_past("12/3/2027") == False
 
+def test_if_the_date_is_not_passed() :
+    current_date = TestDateService()
+    date_verifier= dateVerifier(current_date)
+    assert date_verifier.is_past("") == False
