@@ -16,3 +16,8 @@ def test_if_the_date_is_not_passed() :
     date_verifier= dateVerifier(current_date)
     assert date_verifier.is_past("2024/04/23") == False
 
+def test_when_we_give_the_same_date_of_the_fixed_current_date() :
+    current_date = TestDateService()
+    date_verifier= dateVerifier(current_date)
+    assert date_verifier.is_past("2024/04/4") == False
+
