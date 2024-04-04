@@ -39,13 +39,14 @@ class dateVerifier:
 
         for i in range(len(given_date_table)):
             given_date_table[i] = int(given_date_table[i])
-        
-        for j in range(3):
-            if given_date_table[j] != self.current_date.get_current_date()[j]:
+            
+        if (given_date_table[1] >= 1 and given_date_table[1] <= 12 ) and (given_date_table[2] >= 1 and given_date_table[2] <= 31):
+            for j in range(3):
+                if given_date_table[j] != self.current_date.get_current_date()[j]:
                 
-                if given_date_table[j] < self.current_date.get_current_date()[j]:
-                    is_past = True
-                    return is_past
+                    if given_date_table[j] < self.current_date.get_current_date()[j]:
+                        is_past = True
+                        return is_past
         
         return is_past
 
