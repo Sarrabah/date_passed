@@ -2,14 +2,12 @@ import datetime
 from abc import ABC, abstractmethod
 
     
-#la classe abstraite
-class Os_Current_Date_Service(ABC):
+class DateServiceInterface(ABC):
     @abstractmethod
     def get_current_date(self):
         ...
 
-#l'implémentation
-class Os_Current_Date(Os_Current_Date_Service):
+class DateService(DateServiceInterface):
 
     def get_current_date(self): 
         current_date_table = []
@@ -27,9 +25,9 @@ class Os_Current_Date(Os_Current_Date_Service):
         return current_date_table
 
 
-class Is_Passed:
+class dateVerifier:
 
-    def __init__(self, current_date: Os_Current_Date_Service):
+    def __init__(self, current_date: DateServiceInterface):
         self.current_date = current_date
     
 
@@ -52,7 +50,7 @@ class Is_Passed:
         return is_past
 
 
-#l'éxecution
-current_date = Os_Current_Date()
-x = Is_Passed(current_date)
-print(x.is_past("2024/04/03"))
+
+current_date = DateService()
+date_verifier = dateVerifier(current_date)
+print(date_verifier.is_past("2024/04/23"))
