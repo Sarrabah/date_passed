@@ -6,9 +6,13 @@ class TestDateService(DateServiceInterface):
         current_date = [2024,4,4]
         return current_date
 
-def test_if_the_date_is_passed_or_not() :
+def test_if_the_date_is_passed() :
+    current_date = TestDateService()
+    date_verifier= dateVerifier(current_date)
+    assert date_verifier.is_past("2024/04/2") == True
+
+def test_if_the_date_is_not_passed() :
     current_date = TestDateService()
     date_verifier= dateVerifier(current_date)
     assert date_verifier.is_past("2024/04/23") == False
-
 
