@@ -43,7 +43,10 @@ class dateVerifier:
         for i in range(len(given_date_table)):
             given_date_table[i] = int(given_date_table[i])
 
-        if (given_date_table[1] >= 1 and given_date_table[1] <= 12 ) and (given_date_table[2] >= 1 and given_date_table[2] <= 31):
+        month = given_date_table[1]
+        day= given_date_table[2] 
+        
+        if ( month >= 1 and month <= 12 ) and (day >= 1 and day <= 31):
             for j in range(3):
                 if given_date_table[j] != self.current_date.get_current_date()[j]:
                 
