@@ -25,7 +25,7 @@ class DateService(DateServiceInterface):
         return current_date_table
 
 
-class dateVerifier:
+class DateVerifier:
 
     def __init__(self, current_date: DateServiceInterface):
         self.current_date = current_date
@@ -59,5 +59,6 @@ class dateVerifier:
 
 
 current_date = DateService()
-date_verifier = dateVerifier(current_date)
-print(date_verifier.is_past("2024/04/23"))
+date_verifier = DateVerifier(current_date)
+date = input('what date to compare ?')
+print(date_verifier.is_past(date))
